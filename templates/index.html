@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Resume Builder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+    <h1>AI Resume Builder</h1>
+
+    <form method="post">
+        <label>Target Role:</label><br>
+        <input type="text" name="role" placeholder="e.g. Software Intern"><br><br>
+
+        <label>Paste Your Resume:</label><br>
+        <textarea name="resume" rows="10" cols="60"
+            placeholder="Paste your resume text here..."></textarea><br><br>
+
+        <button type="submit">Analyze Resume</button>
+    </form>
+
+    {% if feedback %}
+    <div class="result">
+        <h2>AI Feedback</h2>
+        <pre>{{ feedback }}</pre>
+    </div>
+{% endif %}
+</div>
+</body>
+</html>
